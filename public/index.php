@@ -19,6 +19,15 @@ try {
     // Создаем DI
     $di = new FactoryDefault();
 
+    $di->set('db', function () {
+        return new DbAdapter(array(
+            "host"     => "localhost",
+            "username" => "root",
+            "password" => "",
+            "dbname"   => "gallery"
+        ));
+    });
+
     // Настраиваем компонент View
     $di->set('view', function () {
         $view = new View();
