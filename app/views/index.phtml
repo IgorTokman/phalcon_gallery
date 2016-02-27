@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <?php $this->assets->outputJs('footer') ?>
+    <?php $this->assets->outputCss('header') ?>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .navbar{
+            font-size: 16px;
+        }
+        header{
+            margin-top: 5em;
+            margin-bottom: 4em;
+            font-family: Verdana;
+        }
+        .pull-right li{
+            margin-top: 0.5em
+        }
+        li .btn-group a{
+            padding: 4px 12px;
+            margin-top: 2px;
+            font-size: 16px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+
+    <?php echo $this->getContent(); ?>
+
+</body>
+</html>
+
