@@ -52,7 +52,7 @@
                 <?$this->session->destroy(); if ($this->session->get('auth')):?>
                     <li style="margin-top: 0.5em">
                         <div class="btn-group" role="group" aria-label="..." style="padding-bottom: 5px">
-                            <a role="button" type="button" class="btn btn-success"><?echo "Good afternoon, " . $this->session->get('auth')['name']?></a>
+                            <a role="button" type="button" href="admin/management" class="btn btn-success"><?echo "Good afternoon, " . $this->session->get('auth')['name']?></a>
                             <a role="button" type="button" href="session/remove" class="btn btn-default">LogOut</a>
                         </div>
                     </li>

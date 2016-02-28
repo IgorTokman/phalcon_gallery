@@ -1,0 +1,35 @@
+<div class="container-fluid well text-center">
+
+    <div class="row" style="margin-bottom: 1em; font-size: 18px">
+            <div class="col-md-1 id">
+                id
+            </div>
+            <div class="col-md-3 title">
+                title
+            </div>
+            <div class="col-md-3 author">
+                author
+            </div>
+            <div class="col-md-5">
+                image
+            </div>
+    </div>
+
+    <?php foreach($images as $image):?>
+    <div class="row <?if ($image->id % 2) echo 'bg-primary'; else echo 'bg-success'?>" style="line-height: 146px; padding: 9px 0;">
+        <div class="col-md-1 id">
+            <?=$image->id?>
+        </div>
+        <div class="col-md-3 title">
+            <?=$image->title?>
+        </div>
+        <div class="col-md-3 author">
+          <?=$image->athor?>
+        </div>
+        <div class="col-md-5">
+            <img src="<?=$image->url?>" class="img-responsive" alt="bad">
+        </div>
+    </div>
+    <?php endforeach; ?>
+
+</div>
