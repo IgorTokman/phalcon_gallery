@@ -4,30 +4,43 @@
             <div class="col-md-1 id">
                 id
             </div>
-            <div class="col-md-3 title">
+            <div class="col-md-2 title">
                 title
             </div>
-            <div class="col-md-3 author">
+            <div class="col-md-2 author">
                 author
             </div>
-            <div class="col-md-5">
+            <div class="col-md-4">
                 image
             </div>
+            <div class="col-md-1">
+                action#1
+            </div>
+            <div class="col-md-2">
+               action#2
+            </div>
     </div>
-
+<?$count=0;?>
     <?php foreach($images as $image):?>
-    <div class="row <?if ($image->id % 2) echo 'bg-primary'; else echo 'bg-success'?>" style="line-height: 146px; padding: 9px 0;">
+        <?$count++;?>
+    <div class="row" style="line-height: 146px; padding: 9px 0; background-color:#e3e3e3 <?if ($count % 2) echo ''; else echo 'gainsboro'?>;">
         <div class="col-md-1 id">
             <?=$image->id?>
         </div>
-        <div class="col-md-3 title">
+        <div class="col-md-2 title">
             <?=$image->title?>
         </div>
-        <div class="col-md-3 author">
+        <div class="col-md-2 author">
           <?=$image->athor?>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
             <img src="<?=$image->url?>" class="img-responsive" alt="bad">
+        </div>
+        <div class="col-md-1" style="margin-top: 57px">
+            <a href="/phalcon_gallery/admin/edit/<?=$image->id?>" role="button" class="btn-block btn btn-success">Edit</a>
+        </div>
+        <div class="col-md-2" style="margin-top: 57px">
+            <a href="/phalcon_gallery/admin/delete/<?=$image->id?>" role="button" class="btn-block btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
         </div>
     </div>
     <?php endforeach; ?>
